@@ -88,8 +88,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JiuLing.Controls.WinForms\JiuLing.Controls.WinForms.csproj">
-      <Project>{97d9b894-1624-4e0f-84d4-acf7f7c7317e}</Project>
+    <ProjectReference Include="..\src\JiuLing.Controls.WinForms.csproj">
+      <Project>{c2e9a106-064a-4e2a-be3a-b4b1739ab121}</Project>
       <Name>JiuLing.Controls.WinForms</Name>
     </ProjectReference>
   </ItemGroup>

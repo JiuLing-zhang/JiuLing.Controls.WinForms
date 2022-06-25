@@ -4,5 +4,25 @@
 		<TargetFrameworks>net4.5;net5.0-windows;net6.0-windows</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
 		<Version>0.0.2</Version>
+		<Authors>九零</Authors>
+		<PackageProjectUrl>https://github.com/JiuLing-zhang/JiuLing.Controls.WinForms</PackageProjectUrl>
+		<Description>一个WinForms下的控件库。</Description>
+		<PackageIcon>nuget_icon.png</PackageIcon>
+		<PackageIconUrl />
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Copyright>Copyright (c) 2022 九零</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\nuget_icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 </Project>
