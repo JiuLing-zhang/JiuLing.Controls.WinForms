@@ -11,17 +11,26 @@ namespace JiuLing.Controls.WinForms
     {
         private const int MaxRowsDefault = 1000;
 
+        /// <summary>
+        /// 消息显示时的排序方式
+        /// </summary>
         [Browsable(true)]
-        [Description("消息显示时的排序方式"), Category("扩展"), DefaultValue(OrderByEnum.ASC)]
+        [Description("消息显示时的排序方式"), Category("扩展"), DefaultValue(OrderByEnum.Asc)]
         public OrderByEnum OrderBy { get; set; }
 
 
+        /// <summary>
+        /// 消息的最大显示行数（超过则自动删除老的消息）
+        /// </summary>
         [Browsable(true)]
         [Description("消息的最大显示行数（超过则自动删除老的消息）"), Category("扩展"), DefaultValue(MaxRowsDefault)]
         public int MaxRows { get; set; }
 
 
         private const int MessageColumnWidthDefault = 400;
+        /// <summary>
+        /// 消息列的宽度
+        /// </summary>
         [Browsable(true)]
         [Description("消息列的宽度"), Category("扩展"), DefaultValue(MessageColumnWidthDefault)]
         public int MessageColumnWidth { get; set; }
@@ -30,6 +39,9 @@ namespace JiuLing.Controls.WinForms
 
         private delegate void RemoveListView(int rowIndex);
 
+        /// <summary>
+        /// 实例化组件
+        /// </summary>
         public MessageListView()
         {
             InitializeComponent();
@@ -54,14 +66,43 @@ namespace JiuLing.Controls.WinForms
             MyListView.Columns.Add("消息", MessageColumnWidth);
 
         }
+
+        /// <summary>
+        /// 显示消息
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="message"></param>
         public void ShowInfo(DateTime time, string message)
         {
             ShowMessage(MessageTypeEnum.Info, time, message, Color.FromArgb(0, 0, 0));
         }
+
+        /// <summary>
+        /// 显示警告
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="message"></param>
+        [Obsolete("当前方法已过时，未来会删除，请改用 ShowWarn 方法")]
         public void ShowAlert(DateTime time, string message)
         {
-            ShowMessage(MessageTypeEnum.Alert, time, message, Color.FromArgb(233, 132, 33));
+            ShowMessage(MessageTypeEnum.Warn, time, message, Color.FromArgb(233, 132, 33));
         }
+
+        /// <summary>
+        /// 显示警告
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="message"></param>
+        public void ShowWarn(DateTime time, string message)
+        {
+            ShowMessage(MessageTypeEnum.Warn, time, message, Color.FromArgb(233, 132, 33));
+        }
+
+        /// <summary>
+        /// 显示错误
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="message"></param>
         public void ShowError(DateTime time, string message)
         {
             ShowMessage(MessageTypeEnum.Error, time, message, Color.FromArgb(216, 30, 6));
@@ -88,11 +129,11 @@ namespace JiuLing.Controls.WinForms
 
             switch (OrderBy)
             {
-                case OrderByEnum.ASC:
+                case OrderByEnum.Asc:
                     MyListView.Items.Add(item);
                     MyListView.EnsureVisible(MyListView.Items.Count - 1);
                     break;
-                case OrderByEnum.DESC:
+                case OrderByEnum.Desc:
                     MyListView.Items.Insert(0, item);
                     MyListView.EnsureVisible(0);
                     break;
@@ -117,10 +158,10 @@ namespace JiuLing.Controls.WinForms
             {
                 switch (OrderBy)
                 {
-                    case OrderByEnum.ASC:
+                    case OrderByEnum.Asc:
                         RemoveList(0);
                         break;
-                    case OrderByEnum.DESC:
+                    case OrderByEnum.Desc:
                         RemoveList(MyListView.Items.Count - 1);
                         break;
                     default:

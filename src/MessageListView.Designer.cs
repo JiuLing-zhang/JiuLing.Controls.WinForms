@@ -1,6 +1,9 @@
 ﻿
 namespace JiuLing.Controls.WinForms
 {
+    /// <summary>
+    /// 日志打印组件
+    /// </summary>
     partial class MessageListView
     {
         /// <summary>
@@ -51,7 +54,7 @@ namespace JiuLing.Controls.WinForms
             this.Images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Images.ImageStream")));
             this.Images.TransparentColor = System.Drawing.Color.Transparent;
             this.Images.Images.SetKeyName(0, "Info");
-            this.Images.Images.SetKeyName(1, "Alert");
+            this.Images.Images.SetKeyName(1, "Warn");
             this.Images.Images.SetKeyName(2, "Error");
             // 
             // MessageListView

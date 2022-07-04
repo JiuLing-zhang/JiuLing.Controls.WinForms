@@ -5,7 +5,13 @@
     /// </summary>
     public enum OrderByEnum
     {
-        ASC,
-        DESC
+        /// <summary>
+        /// 正序
+        /// </summary>
+        Asc,
+        /// <summary>
+        /// 倒序
+        /// </summary>
+        Desc
     }
 }

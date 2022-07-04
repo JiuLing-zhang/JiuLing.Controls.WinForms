@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net4.5;net5.0-windows;net6.0-windows</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
-		<Version>0.0.2</Version>
+		<Version>0.0.3</Version>
 		<Authors>九零</Authors>
 		<PackageProjectUrl>https://github.com/JiuLing-zhang/JiuLing.Controls.WinForms</PackageProjectUrl>
 		<Description>一个WinForms下的控件库。</Description>

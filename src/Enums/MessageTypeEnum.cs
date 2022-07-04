@@ -7,7 +7,7 @@ namespace JiuLing.Controls.WinForms.Enums
         [Description("消息")]
         Info,
         [Description("警告")]
-        Alert,
+        Warn,
         [Description("错误")]
         Error,
     }

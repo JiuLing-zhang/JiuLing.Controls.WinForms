@@ -19,7 +19,7 @@ namespace JiuLing.Controls.WinForms.Test
 
         private void FmMessageListView_Load(object sender, EventArgs e)
         {
-
+            messageListView1.OrderBy = Enums.OrderByEnum.Asc;
         }
 
         private void BtnInfo_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace JiuLing.Controls.WinForms.Test
         {
             for (int i = 0; i < 10; i++)
             {
-                messageListView1.ShowAlert(DateTime.Now, $"警告{i}--这是一条测试信息(test info)");
+                messageListView1.ShowWarn(DateTime.Now, $"警告{i}--这是一条测试信息(test info)");
             }
         }
 
@@ -47,7 +47,7 @@ namespace JiuLing.Controls.WinForms.Test
                     messageListView1.ShowError(DateTime.Now, $"错误{i}--这是一条测试信息(test info)");
                 }
             });
-          
+
         }
     }
 }
